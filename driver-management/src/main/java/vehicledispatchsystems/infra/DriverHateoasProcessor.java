@@ -13,7 +13,7 @@ public class DriverHateoasProcessor
     @Override
     public EntityModel<Driver> process(EntityModel<Driver> model) {
         model.add(
-            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("")
+            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("update")
         );
 
         return model;
