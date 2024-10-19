@@ -13,7 +13,7 @@ public class UserHateoasProcessor
     @Override
     public EntityModel<User> process(EntityModel<User> model) {
         model.add(
-            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("")
+            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("update")
         );
 
         return model;

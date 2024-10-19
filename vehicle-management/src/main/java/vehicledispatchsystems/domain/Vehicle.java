@@ -16,6 +16,9 @@ import vehicledispatchsystems.domain.VehicleDeleted;
 public class Vehicle {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String manufacturer;
 
     private String model;

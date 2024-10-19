@@ -13,7 +13,7 @@ public class VehicleHateoasProcessor
     @Override
     public EntityModel<Vehicle> process(EntityModel<Vehicle> model) {
         model.add(
-            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("")
+            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("update")
         );
         model.add(
             Link

@@ -16,6 +16,9 @@ import vehicledispatchsystems.domain.UserDeleted;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
 
     private String registrationNumber;
@@ -46,6 +49,18 @@ public class User {
     //<<< Clean Arch / Port Method
     public void updateUser(UpdateUserCommand updateUserCommand) {
         //implement business logic here:
+        if (updateUserCommand.getName() != null) {
+            this.name = updateUserCommand.getName();
+        }
+        if (updateUserCommand.getRegistrationNumber() != null) {
+            this.registrationNumber = updateUserCommand.getRegistrationNumber();
+        }
+        if (updateUserCommand.getDateOfBirth() != null) {
+            this.dateOfBirth = updateUserCommand.getDateOfBirth();
+        }
+        if (updateUserCommand.getAddress() != null) {
+            this.address = updateUserCommand.getAddress();
+        }
 
         UserUpdated userUpdated = new UserUpdated(this);
         userUpdated.publishAfterCommit();

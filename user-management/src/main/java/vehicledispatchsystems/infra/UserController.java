@@ -26,7 +26,7 @@ public class UserController {
         produces = "application/json;charset=UTF-8"
     )
     public User updateUser(
-        @PathVariable(value = "id") String id,
+        @PathVariable(value = "id") Long id,
         @RequestBody UpdateUserCommand updateUserCommand,
         HttpServletRequest request,
         HttpServletResponse response
