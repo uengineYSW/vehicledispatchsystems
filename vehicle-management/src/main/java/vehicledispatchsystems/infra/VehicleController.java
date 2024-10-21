@@ -26,7 +26,7 @@ public class VehicleController {
         produces = "application/json;charset=UTF-8"
     )
     public Vehicle updateVehicle(
-        @PathVariable(value = "id") String id,
+        @PathVariable(value = "id") Long id,
         @RequestBody UpdateVehicleCommand updateVehicleCommand,
         HttpServletRequest request,
         HttpServletResponse response
@@ -48,7 +48,7 @@ public class VehicleController {
         produces = "application/json;charset=UTF-8"
     )
     public Vehicle reportVehicleBreakdown(
-        @PathVariable(value = "id") String id,
+        @PathVariable(value = "id") Long id,
         @RequestBody ReportVehicleBreakdownCommand reportVehicleBreakdownCommand,
         HttpServletRequest request,
         HttpServletResponse response
